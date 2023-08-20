@@ -39,7 +39,7 @@ class _MachinePageState extends State<MachinePage> {
             Column(
               children: [
                 // TODO забирать с сервера
-                Image.network("assets/machine_photo_sample.jpg"),
+                Image.network("/assets/assets/machine_photo_sample.jpg"),
                 Text(
                   "Автомат на входе в парк горького",
                   style: Theme.of(context).textTheme.bodyMedium,

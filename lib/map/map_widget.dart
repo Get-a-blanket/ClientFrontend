@@ -38,7 +38,7 @@ class _MapWidget extends State<MapWidget> {
         (int id) => IFrameElement()
           ..style.width = "100%"
           ..style.height = "100%"
-          ..src = '/assets/map_widget.html'
+          ..src = '/assets/assets/map_widget.html'
           ..style.border = 'none');
     return SizedBox(
       height: MediaQuery.of(context).size.height,

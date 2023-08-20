@@ -88,10 +88,29 @@ function init() {
 
     // Макет кнопки геолокации
     let GeolocationLayout = ymaps.templateLayoutFactory.createClass(
-        '<svg id="geo-btn" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-        '<circle cx="25" cy="25" r="25" fill="#71BA74"/>\n' +
-        '<path d="M36 20.5C36 29.1792 24.5 42.4151 24.5 42.4151C24.5 42.4151 13 29.8302 13 20.5C13 14.1487 18.1487 9 24.5 9C30.8513 9 36 14.1487 36 20.5Z" fill="white"/>\n' +
-        '<circle cx="24.5" cy="20.5" r="5.85849" fill="#71BA74"/>\n' +
+        // '<svg id="geo-btn" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        // '<circle cx="25" cy="25" r="25" fill="#71BA74"/>\n' +
+        // '<path d="M36 20.5C36 29.1792 24.5 42.4151 24.5 42.4151C24.5 42.4151 13 29.8302 13 20.5C13 14.1487 18.1487 9 24.5 9C30.8513 9 36 14.1487 36 20.5Z" fill="white"/>\n' +
+        // '<circle cx="24.5" cy="20.5" r="5.85849" fill="#71BA74"/>\n' +
+        // '</svg>\n' +
+        '<svg id="geo-btn" width="65" height="74" viewBox="0 0 65 74" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<g filter="url(#filter0_d_15_71)">\n' +
+        '<circle cx="37" cy="37" r="25" fill="#71BA74"/>\n' +
+        '<path d="M48 32.5C48 41.1792 36.5 54.4151 36.5 54.4151C36.5 54.4151 25 41.8302 25 32.5C25 26.1487 30.1487 21 36.5 21C42.8513 21 48 26.1487 48 32.5Z" fill="white"/>\n' +
+        '<circle cx="36.5" cy="32.5" r="5.85849" fill="#71BA74"/>\n' +
+        '</g>\n' +
+        '<defs>\n' +
+        '<filter id="filter0_d_15_71" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">\n' +
+        '<feFlood flood-opacity="0" result="BackgroundImageFix"/>\n' +
+        '<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>\n' +
+        '<feOffset/>\n' +
+        '<feGaussianBlur stdDeviation="6"/>\n' +
+        '<feComposite in2="hardAlpha" operator="out"/>\n' +
+        '<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>\n' +
+        '<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15_71"/>\n' +
+        '<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15_71" result="shape"/>\n' +
+        '</filter>\n' +
+        '</defs>\n' +
         '</svg>\n', {
             build: function () {
                 // Вызываем родительский метод build.

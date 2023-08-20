@@ -21,7 +21,7 @@ class TariffData {
   final int id;
   final String name;
   final String description;
-  final int price;
+  final double price;
   final String unit;
 
   TariffData.fromJSON(Map dict)
@@ -39,14 +39,14 @@ class _TariffPageState extends State<TariffPage> {
       "id": 1,
       "name": "Почасовой тариф",
       "description": "Стоимость списывается с карты каждый час",
-      "price": 99,
+      "price": 99.0,
       "unit": "₽ в час"
     }),
     TariffData.fromJSON({
       "id": 2,
       "name": "Суточный тариф",
       "description": "Стоимость списывается 1 раз за сутки",
-      "price": 249,
+      "price": 249.0,
       "unit": "₽"
     }),
   ];
@@ -84,7 +84,7 @@ class _TariffPageState extends State<TariffPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          element.price.toString(),
+                          element.price.round().toString(), // Округление до целого !!!
                           style: Theme.of(context).textTheme.titleSmall,
                           textAlign: TextAlign.start,
                         ),
