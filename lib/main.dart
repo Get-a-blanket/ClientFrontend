@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_a_blanket/map/map_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'machine/machine_page.dart';
 import 'machine_code/machine_code_page.dart';
+import 'colors.dart';
+import 'fonts.dart';
 
 void main() {
   runApp(const RestartWidget(child: MyApp()));
@@ -47,11 +48,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SharedPreferences.getInstance().then((prefs) =>
         prefs.remove('takeBlanket')); // удаляем данные о типе операции с пледом
-    Color primaryColor = const Color(0xff3f7641);
-    Color secondaryColor = const Color(0xff71BA74);
-    Color onPrimaryColor = const Color(0xffffffff);
-    Color onSecondaryColor = const Color(0xff000000);
-    // Color secondaryVariantColor = const Color(0xFFFFFFFF);
     return MaterialApp(
       title: 'Get a blanket',
       initialRoute: "/",
@@ -78,36 +74,8 @@ class MyApp extends StatelessWidget {
             bottom: 30,
           ),
         )),
-        fontFamily: "Inter",
-        textTheme: TextTheme(
-          labelLarge: TextStyle(
-            fontSize: 30.0,
-            color: onPrimaryColor,
-            fontWeight: FontWeight.w800,
-            fontFamily: "Inter",
-          ),
-          labelMedium: TextStyle(
-            fontSize: 30.0,
-            color: onSecondaryColor,
-            fontWeight: FontWeight.w600,
-            fontFamily: "Inter",
-          ),
-          titleLarge: const TextStyle(
-            fontSize: 30.0,
-            fontWeight: FontWeight.w800,
-            fontFamily: "Inter",
-          ),
-          titleMedium: const TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.w600,
-            fontFamily: "Inter",
-          ),
-          titleSmall: const TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.w600,
-            fontFamily: "Inter",
-          ),
-        ),
+        fontFamily: fontFamily,
+        textTheme: textTheme,
       ),
       routes: {
         "/": (context) => const MapPage(),
