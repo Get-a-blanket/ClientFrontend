@@ -16,7 +16,8 @@ class _MapPageState extends State<MapPage> {
         .push(MaterialPageRoute(builder: (context) => const MachineCodePage()));
   }
 
-  static const aboutText = """Проект создан при поддержке Федерального государственного бюджетного учреждения "Фонд содействия развитию малых форм предприятий в научно-технической сфере" в рамках программы "Студенческий стартап" федерального проекта "Платформа университетского технологического предпринимательства"
+  static const aboutText =
+      """Проект создан при поддержке Федерального государственного бюджетного учреждения "Фонд содействия развитию малых форм предприятий в научно-технической сфере" в рамках программы "Студенческий стартап" федерального проекта "Платформа университетского технологического предпринимательства"
 
 
 Get a Blanket — это инновационный сервис аренды пледов через вендинговые автоматы. Мы создаем удобные решения для вашего комфорта на прогулках, в парках, на фестивалях и других мероприятиях. Аренда осуществляется с помощью мобильного сайта и QR-кода, размещённого на автомате.
@@ -45,12 +46,12 @@ Email: svataeva@edu.hse.ru
             ),
           ),
         ),
-        PointerInterceptor(
-          child: Container(
-            alignment: Alignment.topCenter,
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width / 20,
-                vertical: MediaQuery.of(context).size.height / 20),
+        Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width / 20,
+              vertical: MediaQuery.of(context).size.height / 20),
+          child: PointerInterceptor(
             child: GestureDetector(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -83,13 +84,27 @@ Email: svataeva@edu.hse.ru
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return Dialog(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Text(
-                          aboutText,
-                          textAlign: TextAlign.left,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                    return PointerInterceptor(
+                      child: Dialog(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                aboutText,
+                                textAlign: TextAlign.left,
+                                style: Theme.of(context).textTheme.bodyLarge,
+                              ),
+                              TextButton(
+                                child: const Text("Закрыть"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
