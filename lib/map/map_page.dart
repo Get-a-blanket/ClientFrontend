@@ -35,6 +35,29 @@ class _MapPageState extends State<MapPage> {
             ),
           ),
         ),
+        Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width / 20,
+              vertical: MediaQuery.of(context).size.height / 20),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                "GET A BLANKET",
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 50,
+              ),
+              Image.asset(
+                "assets/fond_pic.png",
+                height: 48,
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
